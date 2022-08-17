@@ -12,3 +12,4 @@ hello,insert something! master change test !
 hot-fix!
 hello,insert something!
 hello commit by outside !
+write by outside !
