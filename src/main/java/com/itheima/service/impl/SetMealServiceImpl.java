@@ -34,4 +34,16 @@ public class SetMealServiceImpl extends ServiceImpl<SetMealMapper, Setmeal> impl
         }).collect(Collectors.toList());
         setmealDishService.saveBatch(setmealDishes);
     }
+
+    @Override
+    public void updateWithDish(SetmealDto setmealDto) {
+        this.updateById(setmealDto);
+        List<SetmealDish> setmealDishes = setmealDto.getSetmealDishes();
+        setmealDishes.stream().map(setmealdish ->{
+            setmealdish.setSetmealId(setmealDto.getCategoryId());
+            return setmealdish;
+        }).collect(Collectors.toList());
+        setmealDishService.saveBatch(setmealDishes);
+
+    }
 }

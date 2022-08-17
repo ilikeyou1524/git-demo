@@ -95,4 +95,15 @@ public class SetmealController {
         dtoPage.setRecords(list);
         return R.success(dtoPage);
     }
+
+    @GetMapping("/{id}")
+    public R<Setmeal> getById(@PathVariable Long id){
+        Setmeal byId = setMealService.getById(id);
+        return R.success(byId);
+    }
+    @PutMapping
+    public R<String> update(@RequestBody SetmealDto setmealDto){
+        setMealService.updateWithDish(setmealDto);
+        return R.success("yes!");
+    }
 }

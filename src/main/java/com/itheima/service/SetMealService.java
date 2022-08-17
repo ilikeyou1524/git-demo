@@ -10,5 +10,8 @@ import com.itheima.entity.Setmeal;
  * @date 2022-08-06 1:11
  */
 public interface SetMealService extends IService<Setmeal> {
+    //新增新菜品
     void saveWithDish(SetmealDto setmealDto);
+    //保存新菜
+    void updateWithDish(SetmealDto setmealDto);
 }
